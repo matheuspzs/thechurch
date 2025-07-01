@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div>
-      
+      Aqui será a página de doação
     </div>
   );
 }
