@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

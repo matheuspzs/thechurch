@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import PageIgreja from "~/components/PageIgreja";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,7 +11,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div>
-      Aqui será a página de doação
+      <PageIgreja />
     </div>
   );
 }
