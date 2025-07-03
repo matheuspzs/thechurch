@@ -14,7 +14,7 @@ export default function Index() {
   return (
     <>
       <Banner>
-        <h1>Um lugar de<br/>Adoração</h1>
+        <h1>Um lugar de adoração</h1>
       </Banner>
       <HomePage />
     </>
