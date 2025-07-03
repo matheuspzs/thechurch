@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import HeaderMenu from '../components/HeaderMenu';
 import HomePage from "~/components/HomePage";
+import Banner from "~/components/Banner";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,6 +12,11 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <HomePage />
+    <>
+      <Banner>
+        <h1>Um lugar de<br/>Adoração</h1>
+      </Banner>
+      <HomePage />
+    </>
   );
 }
