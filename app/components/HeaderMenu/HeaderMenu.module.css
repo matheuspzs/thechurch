@@ -95,6 +95,11 @@
     transition: 0.4s;
 }
 
+.activeButton {
+    color: red;
+    text-decoration: underline;
+}
+
 @media (max-width: 900px) {
     .navContainer {
         display: none;

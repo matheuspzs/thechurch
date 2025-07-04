@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useLocation, Link } from "@remix-run/react";
 import styles from "./HeaderMenu.module.css";
 import logo from "../../assets/logo.png";
 import facebookIcon from "../../assets/facebook.png";
 import instagramIcon from "../../assets/instagram.png";
 import twitterIcon from "../../assets/twitter.png";
 import youtubeIcon from "../../assets/youtube.png";
-import { Link } from '@remix-run/react';
 
 function SocialMediaIcon() {
     const socialMediaData = [
@@ -54,7 +54,8 @@ function SocialMediaIcon() {
     )
 }
 
-function HeaderButtons(){
+function HeaderButtons() {
+    const location = useLocation();
     const navigationButtons = [
         { name: 'Início', link: '/' },
         { name: 'Igreja', link: '/igreja' },
@@ -70,13 +71,17 @@ function HeaderButtons(){
                 <a
                     key={button.name}
                     href={button.link}
-                    className={button.name == 'Doação' ? styles.donateButton : styles.buttonLink}
+                    className={`
+                        ${button.name == 'Doação' ?
+                            styles.donateButton : styles.buttonLink}
+                        ${location.pathname === button.link ?
+                            styles.activeButton : ''}`}
                 >
                     {button.name}
                 </a>
             ))}
         </div>
-    )
+    );
 }
 
 function HeaderMenu() {
