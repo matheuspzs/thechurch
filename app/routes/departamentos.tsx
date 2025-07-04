@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <div>
       <Banner>
-        <h1>Nossos <br /> Departamentos</h1>
+        <h1>Nossas <br /> Áreas</h1>
       </Banner>
     </div>
   );

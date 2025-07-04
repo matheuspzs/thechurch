@@ -1,9 +1,11 @@
+import { useState } from "react";
 import styles from "./HeaderMenu.module.css";
 import logo from "../../assets/logo.png";
 import facebookIcon from "../../assets/facebook.png";
 import instagramIcon from "../../assets/instagram.png";
 import twitterIcon from "../../assets/twitter.png";
 import youtubeIcon from "../../assets/youtube.png";
+import { Link } from '@remix-run/react';
 
 function SocialMediaIcon() {
     const socialMediaData = [
@@ -78,19 +80,33 @@ function HeaderButtons(){
 }
 
 function HeaderMenu() {
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <header>
             <nav className={styles.navMenu}>
                 <div>
-                    <img src={logo} alt="logo" className={styles.logo} />
+                    <Link to="/" className={styles.logoLink}>
+                        <img src={logo} alt="logo" className={styles.logo} />
+                    </Link>
                 </div>
-                <div className={styles.navContainer}>
-                    <SocialMediaIcon/>
-                    <HeaderButtons/>
+                <button
+                    className={styles.hamburger}
+                    onClick={() => setMenuOpen((open) => !open)}
+                    aria-label="Abrir menu"
+                >
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                </button>
+                <div
+                    className={menuOpen ? styles.navContainerOpen : styles.navContainer}
+                >
+                    <SocialMediaIcon />
+                    <HeaderButtons />
                 </div>
             </nav>
         </header>
-    )
+    );
 }
 
 export default HeaderMenu;
