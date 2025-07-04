@@ -49,34 +49,42 @@
 }
 
 @media (max-width: 900px) {
+
     .containerText {
         width: 100%;
         text-align: center;
         padding: 0 20px;
     }
+
     .containerText h1 {
         font-size: 40px;
         line-height: unset;
     }
+
     .containerImage {
         display: none;
     }
+
     .textWithImage {
         margin: 20px;
     }
+
     .descriptions {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
+
     .descriptionWithIcon {
         justify-content: center;
         align-items: center;
     }
+
     .descriptionWithIcon p {
         text-align: start;
     }
+    
     .button {
         width: 100%;
         text-align: center;
